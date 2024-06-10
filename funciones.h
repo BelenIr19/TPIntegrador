@@ -1,5 +1,7 @@
 #ifndef FUNCIONES_H_INCLUDED
 #define FUNCIONES_H_INCLUDED
+#include <stdlib.h>
+#include <time.h>
 #include <iostream>
 
 
@@ -7,7 +9,9 @@ using namespace std;
 
 ///Declaraciones
 
+void mostrarMenu();
 void cargarDadoManual (int dado[], int TAM);
+void cargarDadoAleatorio (int dado[], int TAM);
 void mostrarValorDados(int dado[], int TAM);
 void puntajes(int dado[], int TAM);
 void escalera (int dado[], int TAM);
@@ -17,6 +21,34 @@ void suma(int dado[], int TAM);
 
 
 /// Definiciones
+
+void mostrarMenu()
+{
+
+    system("cls");
+    cout<<" ---- Escalera o Cien ---- "<<endl;
+    cout<<" 1 - Cargar Dado Manual "<<endl;
+    cout<<" 2 - Cargar Dado Aleatorio "<<endl;
+    cout<<" 3 - Mostrar Vector "<<endl;
+    cout<<" 4 - Mostrar Puntaje" << endl;
+    cout<<" 0 - Salir "<<endl;
+    cout<<" Ingrese la opcion deseada: "<<endl;
+}
+
+
+void cargarDadoAleatorio (int dado[], int TAM)
+{
+    int i;
+    for (i=0; i<TAM ; i++ )
+    {
+        dado[i]=rand()%6+1;
+    }
+    cout<<"Dado correctamente cargado con numeros aleatorios..."<<endl;
+
+}
+
+
+
 
 void cargarDadoManual (int dado[], int TAM)
 {
@@ -57,7 +89,8 @@ void escalera (int dado[], int TAM)
             contdif++;
         }
 
-        if (contdif==6){
+        if (contdif==6)
+        {
 
             cout << "Escalera!" <<endl;
         }
@@ -66,8 +99,9 @@ void escalera (int dado[], int TAM)
 
 }
 
-void sexteto(int dado[], int TAM){
- int sext, numdd;
+void sexteto(int dado[], int TAM)
+{
+    int sext, numdd;
     int puntaje=0, contig=0;
     for (sext=0; sext<6; sext++)
     {
@@ -82,7 +116,8 @@ void sexteto(int dado[], int TAM){
             contig++;
         }
 
-        if (contig==6){
+        if (contig==6)
+        {
 
             cout << "Sexteto de "<< numdd <<endl;
         }
@@ -92,7 +127,8 @@ void sexteto(int dado[], int TAM){
 
 }
 
-void suma(int dado[], int TAM){
+void suma(int dado[], int TAM)
+{
 
     int sum, numsum;
     int puntaje=0, contdif=0;
@@ -109,7 +145,8 @@ void suma(int dado[], int TAM){
             contdif++;
         }
 
-        if (contdif!=6 && contdif!=0){
+        if (contdif!=6 && contdif!=0)
+        {
 
             cout << "SUMA" <<endl;
         }

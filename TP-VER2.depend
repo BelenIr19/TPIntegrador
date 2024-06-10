@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1718029795 source:c:\users\bi407\onedrive\desktop\github\tpintegrador\main.cpp
+	<iostream>
+	"funciones.h"
+	<stdlib.h>
+	<time.h>
+
+1718029868 c:\users\bi407\onedrive\desktop\github\tpintegrador\funciones.h
+	<stdlib.h>
+	<time.h>
+	<iostream>
+

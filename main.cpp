@@ -1,18 +1,21 @@
 #include <iostream>
 #include "funciones.h"
+#include <stdlib.h>
+#include <time.h>
 
 using namespace std;
 
 
 int main()
 {
-//
+
+    srand(time(NULL));
     const int TAM=6;
     int dados[TAM]= {};
     int opcion=1;
     while (opcion!=0){
 
-        cout << "Ingrese la opcion correspondiente: " << endl;
+        mostrarMenu();
 
         cin>>opcion;
         switch (opcion){
@@ -20,15 +23,18 @@ int main()
             cargarDadoManual(dados, TAM);
             break;
         case 2:
-            mostrarValorDados(dados, TAM);
+            cargarDadoAleatorio(dados, TAM);
             break;
         case 3:
-            escalera(dados, TAM);
+            mostrarValorDados(dados, TAM);
             break;
         case 4:
-            sexteto(dados, TAM);
+            escalera(dados, TAM);
             break;
         case 5:
+            sexteto(dados, TAM);
+            break;
+        case 6:
             suma(dados, TAM);
             break;
 
