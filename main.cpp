@@ -6,6 +6,7 @@ using namespace std;
 
 int main()
 {
+//
     const int TAM=6;
     int dados[TAM]= {};
     int opcion=1;
