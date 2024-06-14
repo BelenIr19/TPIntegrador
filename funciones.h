@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <iostream>
+#include "rlutil.h"
 
 
 using namespace std;
@@ -24,6 +25,7 @@ void suma(int dado[], int TAM);
 
 void mostrarMenu()
 {
+    setlocale(LC_ALL,"spanish");
 
     system("cls");
     cout<<" ---- Escalera o Cien ---- "<<endl;

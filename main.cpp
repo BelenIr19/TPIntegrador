@@ -2,17 +2,20 @@
 #include "funciones.h"
 #include <stdlib.h>
 #include <time.h>
+#include "rlutil.h"
 
 using namespace std;
 
 
 int main()
 {
-
+    setlocale(LC_ALL,"spanish");
     srand(time(NULL));
     const int TAM=6;
     int dados[TAM]= {};
     int opcion=1;
+    rlutil::setColor(rlutil::MAGENTA);
+    rlutil::setBackgroundColor(rlutil::GREY);
     while (opcion!=0){
 
         mostrarMenu();
