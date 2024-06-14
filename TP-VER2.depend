@@ -1,12 +1,31 @@
 # depslib dependency file v1.0
-1718029795 source:c:\users\bi407\onedrive\desktop\github\tpintegrador\main.cpp
+1718368467 source:c:\users\bi407\onedrive\desktop\github\tpintegrador\main.cpp
 	<iostream>
 	"funciones.h"
 	<stdlib.h>
 	<time.h>
+	"rlutil.h"
+	"colors.h"
 
-1718029868 c:\users\bi407\onedrive\desktop\github\tpintegrador\funciones.h
+1718370607 c:\users\bi407\onedrive\desktop\github\tpintegrador\funciones.h
 	<stdlib.h>
 	<time.h>
 	<iostream>
+	"rlutil.h"
+
+1718363921 c:\users\bi407\onedrive\desktop\github\tpintegrador\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1718364494 c:\users\bi407\onedrive\desktop\github\tpintegrador\colors.h
 
