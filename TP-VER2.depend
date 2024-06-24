@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1718368467 source:c:\users\bi407\onedrive\desktop\github\tpintegrador\main.cpp
+1719198235 source:c:\users\bi407\onedrive\desktop\github\tpintegrador\main.cpp
 	<iostream>
 	"funciones.h"
 	<stdlib.h>
@@ -7,7 +7,7 @@
 	"rlutil.h"
 	"colors.h"
 
-1718370607 c:\users\bi407\onedrive\desktop\github\tpintegrador\funciones.h
+1719198515 c:\users\bi407\onedrive\desktop\github\tpintegrador\funciones.h
 	<stdlib.h>
 	<time.h>
 	<iostream>

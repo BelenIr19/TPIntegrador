@@ -37,10 +37,11 @@ int main()
             mostrarValorDados(dados, TAM);
             break;
         case 4:
-            puntajes(dados, TAM);
+            cargarVectorRepetidos(dados, TAM);
             system("pause");
-
             break;
+        case 5:
+            puntaje(dados, TAM);
 
         case 0:
             cout<<"Saliendo del programa..."<<endl;

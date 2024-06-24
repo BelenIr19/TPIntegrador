@@ -15,10 +15,12 @@ void mostrarMenu();
 void cargarDadoManual(int dado[], int TAM);
 void cargarDadoAleatorio(int dado[], int TAM);
 void mostrarValorDados(int dado[], int TAM);
-void puntajes(int dado[], int TAM);
-bool escalera (int dado[], int TAM);
-bool sexteto(int dado[], int TAM);
-bool suma(int dado[], int TAM);
+void cargarVectorRepetidos(int dado[], int TAM);
+int Cuenta(int dados[], int TAM, int num);
+void Elimina(int dados[], int TAM, int num);
+int puntaje (int dados[], int TAM);
+bool escalera(int dados[], int TAM);
+
 
 
 
@@ -50,8 +52,6 @@ void cargarDadoAleatorio(int dado[], int TAM)
 }
 
 
-
-
 void cargarDadoManual(int dado[], int TAM)
 {
     int i;
@@ -74,130 +74,119 @@ void mostrarValorDados(int dado[], int TAM)
     system("pause");
 }
 
-bool escalera (int dado[], int TAM)
+int Cuenta(int dados[], int TAM, int num)
 {
-    int esc, numesc;
-    int contdif=0;
-    for (esc=0; esc<6; esc++)
+    //cout << "ingresa a cuenta"<<endl;
+
+    int x=0;
+    int l, j;
+    int tam=6;
+    int rep[tam] {};
+    for(j=0; j<TAM; j++)
     {
-        if (esc ==0)
+        if (num==dados[j])
         {
-            numesc=dado[esc];
-            contdif=1;
+            /// acumulador de cuantas veces se repitio
+            x++;
+            /// numero analizado
+            l=dados[j];
 
+            //cout <<"carga rep con x"<<endl;
+            rep[num]=x;
         }
-        else if (esc!=0)
+    }
+    cout << "El numero "<<l<<" se repite "<<x<<" veces." << endl;
+    //cout << "rep: "<<rep[num]<<endl;
+    return x;
+}
 
+
+
+
+/// erased tha numbers that have already been analysed
+void Elimina(int dados[], int TAM, int num)
+{
+    //cout << "ingresa a elimina"<<endl;
+
+    int i;
+    for (i=0; i<TAM; i++)
+    {
+        if (num==dados[i])
         {
-            contdif=contdif+1;
+            dados[i]=0;
         }
-
-        if (contdif==6)
-        {
-            return true;
-        }
-        else
-        {
-
-
-            return false;
-
-        }
-
-        return false;
     }
 }
-    bool sexteto(int dado[], int TAM)
+
+
+void cargarVectorRepetidos(int dado[], int TAM)
+{
+
+    const int tam=6;
+    int rep[tam] {};
+    int i, num;
+    for (i=0; i<tam; i++)
     {
-        int sext, numdd;
-        int contig=0;
-        for (sext=0; sext<6; sext++)
+        num=dado[i];
+        int res;
+        if (num!=0)
         {
-            if (sext==0)
-            {
-                numdd=dado[sext];
-                contig++;
-            }
-            else if (dado[sext]==numdd)
-            {
-                numdd=dado[sext];
-                contig++;
-            }
-
-            if (contig==6)
-            {
-                return true;
-            }
-            else
-            {
-
-                return false;
-            }
-
+            res=Cuenta(dado, tam, num);
+            rep[i]=res;
+            Elimina(dado, tam, num);
         }
+    }
+
+    //cout << "Muestra vector repetidos"<<endl;
+
+    for (i=0; i<tam; i++)
+    {
+        // cout << "Valor de posicion "<<i+1<< " es : "<<rep[i]<<endl;
+    }
+}
+
+int puntaje (int dados[], int TAM)
+{
+    int stair=escalera(dados, TAM);
+    if (stair==true)
+    {
+
+        cout <<"Escalera! Ha ganado la partida. "<< endl;
+    }
+
+return 0;
+}
 
 
+
+
+bool escalera(int dados[], int TAM)
+{
+    cargarVectorRepetidos(dados, TAM);
+    int i;
+    int esca=0;
+    int rep[TAM]{};
+    for (i=0; i<TAM; i++)
+    {
+
+        if (rep[i]==1)
+            esca++;
+    }
+
+    if (esca==6)
+    {
+        return true;
+    }
+    else
+    {
         return false;
     }
 
-    bool suma(int dado[], int TAM)
-    {
+    return false;
+}
 
-        int sum, numsum;
-        int contig=0;
-        for (sum=0; sum<6; sum++)
-        {
-            if (sum ==0)
-            {
-                numsum=dado[sum];
-                contig++;
-            }
-            else if (dado[sum]!=numsum)
-            {
-                numsum=dado[sum];
-                contig++;
-            }
-        }
-        if (contig>1 && contig<6)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
 
-    void puntajes(int dado[], int TAM)
-    {
 
-        bool esEscalera = escalera(dado, TAM);
-
-        cout << "Este es el valor de esEscalera" << esEscalera << endl;
-
-        if (esEscalera)
-        {
-            cout << "Escalera!" <<endl;
-
-        }
-
-        bool esSuma = suma(dado, TAM);
-
-        if (esSuma)
-        {
-            cout << "Suma!" <<endl;
-
-        }
-
-        bool esSexteto = sexteto(dado, TAM);
-
-        if (esSexteto==1)
-        {
-
-            cout << "Sexteto!" <<endl;
-        }
-
-    }
 
 
 #endif // FUNCIONES_H_INCLUDED
