@@ -15,6 +15,7 @@ int main()
     srand(time(NULL));
     const int TAM=6;
     int dados[TAM]= {};
+
     int opcion=1;
     while (opcion!=0)
     {
@@ -41,7 +42,8 @@ int main()
             system("pause");
             break;
         case 5:
-            puntaje(dados, TAM);
+            system("pause");
+
 
         case 0:
             cout<<"Saliendo del programa..."<<endl;
